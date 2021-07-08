@@ -21,7 +21,7 @@ public class JavaRushTelegramBot extends TelegramLongPollingBot {
   private String username;
 
 //  @Value("${bot.token")
-  @Value("1752666951:AAE2CLrGf4g7Z_6X2vabVP4-D051rItuXjs")
+  @Value(" ")
   private String token;
 
   private final CommandContainer commandContainer;
