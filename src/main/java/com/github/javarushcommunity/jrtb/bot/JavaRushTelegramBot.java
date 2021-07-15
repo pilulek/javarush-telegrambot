@@ -1,6 +1,5 @@
 package com.github.javarushcommunity.jrtb.bot;
 
-
 import com.github.javarushcommunity.jrtb.command.CommandContainer;
 import com.github.javarushcommunity.jrtb.service.SendBotMessageServiceImpl;
 import org.springframework.beans.factory.annotation.Value;
@@ -9,6 +8,7 @@ import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
+
 import static com.github.javarushcommunity.jrtb.command.CommandName.NO;
 
 @Component
@@ -19,7 +19,6 @@ public class JavaRushTelegramBot extends TelegramLongPollingBot {
 
 @Component
 public class JavaRushTelegramBot extends TelegramLongPollingBot {
-
 
 //  @Value("${bot.username")
   @Value("javarush_project_bot")
@@ -36,10 +35,8 @@ public class JavaRushTelegramBot extends TelegramLongPollingBot {
     this.commandContainer = new CommandContainer(new SendBotMessageServiceImpl(this));
   }
 
-
-  @Value("1752666951:AAHVAAI6LMAtvZsLiyj97ttCj2omFxiAnD4")
+  @Value("fdnfn")
   private String token;
-
 
   @Override
   public String getBotUsername() {
@@ -61,6 +58,7 @@ public class JavaRushTelegramBot extends TelegramLongPollingBot {
         commandContainer.retrieveCommand(commandIdentifier).execute(update);
       } else {
         commandContainer.retrieveCommand(NO.getCommandName()).execute(update);
+
 
       String chatId = update.getMessage().getChatId().toString();
 
